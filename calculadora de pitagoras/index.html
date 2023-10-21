@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Pitágoras</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Pitágoras</h1>
+    <form>
+        Cateto 1 (a): <input type="number" id="cateto1"><br><br>
+        Cateto 2 (b): <input type="number" id="cateto2"><br><br>
+        <input type="button" value="Calcular" onclick="calcularHipotenusa()">
+    </form>
+    <p>A hipotenusa (c) é: <span id="resultado"></span></p>
+
+    <script>
+        function calcularHipotenusa() {
+            var cateto1 = parseFloat(document.getElementById("cateto1").value);
+            var cateto2 = parseFloat(document.getElementById("cateto2").value);
+            
+            if (!isNaN(cateto1) && !isNaN(cateto2)) {
+                var hipotenusa = Math.sqrt(cateto1 * cateto1 + cateto2 * cateto2);
+                document.getElementById("resultado").textContent = hipotenusa.toFixed(2);
+            } else {
+                alert("Por favor, insira números válidos para os catetos.");
+            }
+        }
+    </script>
+</body>
+</html>
